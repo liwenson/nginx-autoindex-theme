@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CentOS镜像使用帮助</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/mirror.css"
+      media="screen"
+    />
+    <link rel="shortcut icon" href="/.media/favicon.ico" />
+  </head>
+  <body>
+    <h1>CentOS镜像使用帮助</h1>
+
+    <div id="mirror-usage">
+      <h2>仓库</h2>
+      <ul>
+        <li><a href="/yum">CentOS7</a></li>
+      </ul>
+
+      <h2>使用说明</h2>
+
+      <p>首先备份/etc/yum.repos.d/CentOS-Base.repo</p>
+      <pre>
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</pre
+      >
+      <h3>方式一</h3>
+      <p>下载对应版本repo文件, 放入/etc/yum.repos.d/(操作前请做好相应备份)</p>
+      <ul>
+        <li><a href="./help/CentOS7-Base-lan.repo">CentOS7</a></li>
+      </ul>
+      <p>运行以下命令生成缓存</p>
+      <pre>
+curl -o /etc/yum.repos.d/CentOS7-Base-lan.repo http://mirrors.test.com/help/CentOS7-Base-lan.repo
+yum clean all
+yum makecache</pre
+      >
+
+      <h3>方式二</h3>
+      <p>复制repo内容, 粘贴到/etc/yum.repos.d/repo文件(操作前请做好相应备份)</p>
+      <pre>
+[base]
+name=CentOS-Base
+baseurl=http://mirrors.test.com/yum/7/repo/base/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+
+[updates]
+name=CentOS-Updates
+baseurl=http://mirrors.test.com/yum/7/repo/updates/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+
+[extras]
+name=CentOS-Extras
+baseurl=http://mirrors.test.com/yum/7/repo/extras/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+
+[epel]
+name=CentOS-Epel
+baseurl=http://mirrors.test.com/yum/7/repo/epel/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+
+[docker-ce]
+name=docker-ce
+baseurl=http://mirrors.test.com/yum/7/repo/docker-ce-stable/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+
+[kubernetes]
+name=kubernetes
+baseurl=http://mirrors.test.com/yum/7/repo/kubernetes/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+      </pre>
+    </div>
+    <div class="hr"><hr /></div>
+
+    <div id="footer">
+      <p id="copyright">Centos7 yum 仓库</p>
+    </div>
+  </body>
+</html>
+

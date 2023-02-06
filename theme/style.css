@@ -1,0 +1,71 @@
+/**
+ * Nginx Auto Index
+ * Light Style Colors
+ * by kaiby {2022-06-16}
+ * https://github.com/kaiby
+ */
+* {
+	margin: 0;
+	padding: 0
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	min-width: 320px;
+	margin: 1em;
+	color: #333;
+	background-color: #eee;
+	font-size: 120%;
+        font-weight: bold;
+	background: #fff;
+	background-size: 100% 100%;
+	font-family: "Bitstream Vera Sans", "Lucida Grande", Verdana, Lucida, sans-serif;
+	line-height: 0.8;
+}
+
+a {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+h1 {
+	padding: 1em;
+	color: #555;
+	font-size: 80%;
+	font-weight: 400;
+}
+
+hr {
+	display: block;
+	margin: 0 -1px;
+	border-top: 1px solid #ddd;
+	border-bottom: none;
+}
+
+pre {
+	overflow: auto;
+	margin: 1.5em;
+	line-height: 1.4em;
+}
+
+footer {
+	margin: 1em;
+	color: #888;
+	font-size: 80%;
+}
+
+#page {
+	overflow: hidden;
+	background-color: #fff;
+	background: rgba(255,255,255,0.8);
+	border-radius: 5px;
+	box-shadow: 0 0 3px #ccc;
+}
